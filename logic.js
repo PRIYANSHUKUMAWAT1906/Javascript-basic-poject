@@ -2,11 +2,11 @@ const movieinput=document.getElementById("movieInput");
 const moviegrid=document.getElementById("moviesGrid");
 const Btn=document.getElementById("searchBtn");
 const message=document.querySelector(".message");
-
+const apikey=process.env.API_KEY;;
 Btn.addEventListener("click",async()=>{
      message.textContent="...loading";
     const movie=movieinput.value.trim();
-    const api=` http://www.omdbapi.com/?apikey=57491f2b&s=${movie}`;
+    const api=` http://www.omdbapi.com/?apikey=${apikey}&s=${movie}`;
     if(!movie){
         message.textContent="select write movie";
         clearmovie();
